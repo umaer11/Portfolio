@@ -1,0 +1,421 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #fdfdfd; /* Light text color */
+    line-height: 2;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* ✅ Enhanced Animated Graph Grid Background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 400%;
+    height: 400%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.3;
+    z-index: -1;
+    animation: moveGrid 10s linear infinite;
+}
+
+@keyframes moveGrid {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-50px, -50px); }
+}
+
+/* Hero Section */
+header {
+    text-align: center;
+    padding: 100px 20px; /* Increased padding for a spacious look */
+    background: linear-gradient(135deg, rgba(30, 144, 255, 0.1), rgba(30, 144, 255, 0.3)), #121212; /* Gradient overlay */
+    position: relative; /* Position for pseudo-elements */
+    overflow: hidden; /* Hide overflow for pseudo-elements */
+}
+
+header {
+    text-align: center;
+    padding: 150px 20px;
+    background: radial-gradient(circle, rgba(30, 144, 255, 0.2), #121212);
+    animation: fadeIn 1s ease-out;
+}
+
+header h1 {
+    font-size: 5em;
+    font-weight: bold;
+    color: #1e90ff;
+    text-shadow: 0 0 25px rgba(30, 144, 255, 0.8);
+    animation: slideInDown 1s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+}
+
+header h1:hover {
+    transform: scale(1.05);
+}
+
+header p {
+    font-size: 1.8em;
+    color: #cccccc;
+    transition: color 0.3s ease-in-out;
+}
+
+header p:hover {
+    color: #1e90ff;
+}
+
+/* Decorative Pseudo-elements */
+header::before,
+header::after {
+    content: '';
+    position: absolute;
+    width: 300px; /* Width of the decorative elements */
+    height: 300px; /* Height of the decorative elements */
+    border-radius: 50%; /* Circular shape */
+    background: rgba(30, 144, 255, 0.1); /* Light blue color */
+    box-shadow: 0 0 60px rgba(30, 144, 255, 0.5); /* Glowing effect */
+    z-index: 0; /* Behind the content */
+}
+
+header::before {
+    top: -100px; /* Positioning above the header */
+    left: -100px; /* Positioning to the left */
+}
+
+/* About Section */
+#about {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #1a1a1a, #2b2b2b);
+    text-align: center;
+    animation: fadeIn 1.5s ease-out;
+}
+
+#about h2 {
+    font-size: 2.5em;
+    color: #1e90ff;
+    text-shadow: 0 0 10px rgba(30, 144, 255, 0.5);
+}
+
+.about-content {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 204, 255, 0.4);
+    backdrop-filter: blur(15px);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-content p {
+    font-size: 1.2em; /* Larger font size for readability */
+    line-height: 1.6; /* Line height for better spacing */
+    color: #cccccc; /* Light gray for text */
+}
+
+.about-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(0, 204, 255, 0.6);
+}
+
+/* Decorative Pseudo-elements */
+#about::before,
+#about::after {
+    content: '';
+    position: absolute;
+    width: 300px; /* Width of the decorative elements */
+    height: 300px; /* Height of the decorative elements */
+    border-radius: 50%; /* Circular shape */
+    background: rgba(30, 144, 255, 0.1); /* Light blue color */
+    box-shadow: 0 0 60px rgba(30, 144, 255, 0.5); /* Glowing effect */
+    z-index: 0; /* Behind the content */
+}
+
+#about::before {
+    top: -100px; /* Positioning above the section */
+    left: -100px; /* Positioning to the left */
+}
+
+#about::after {
+    bottom: -100px; /* Positioning below the section */
+    right: -100px; /* Positioning to the right */
+}
+
+/* Portfolio Section */
+#projects {
+    padding: 80px 20px;
+    background-color: #1e1e1e;
+    text-align: center;
+    animation: fadeIn 2s ease-out;
+}
+
+#projects h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #ffffff; /* White color for the heading */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Subtle glow */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+#projects h2:hover {
+    color: #1e90ff; /* Change color on hover */
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project {
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #1e90ff; /* Bright blue color for project titles */
+    text-shadow: 0 0 10px rgb(45, 151, 238); /* Subtle glow */
+}
+
+.project p {
+    color: #AAAAAA; /* Light gray for project descriptions */
+    margin-bottom: 20px; /* Space below the description */
+
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+}
+
+
+.glow-on-hover {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1e90ff; /* Button background color */
+    color: #ffffff; /* Button text color */
+    text-decoration: none;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px #1e90ff, 0 0 10px #1e90ff, 0 0 15px #1e90ff; /* Glowing effect */
+}
+
+.glow-on-hover:hover {
+    box-shadow: 0 0 20px #1e90ff, 0 0 30px #1e90ff, 0 0 40px #1e90ff; /* Enhanced glow on hover */
+}
+/* Base Styles */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/* Navigation Bar */
+nav {
+    padding: 12px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 18px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 12px 18px;
+    border-radius: 8px;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: white;
+}
+
+/* Cyberpunk Hover Effect */
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 10px rgba(8, 153, 250, 0.3), 0 0 15px rgba(255, 255, 255, 0.2);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+
+/* === Smooth Underline Hover Effect === */
+ul li a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.4s ease-in-out, left 0.4s ease-in-out;
+}
+
+ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* === Active Link Glow Effect === */
+ul li a.active {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+}
+
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.project {
+    background: rgba(42, 42, 42, 0.9);
+    border-radius: 10px;
+    padding: 25px;
+    width: 320px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.glow-on-hover {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1e90ff; /* Button background color */
+    color: #ffffff; /* Button text color */
+    text-decoration: none;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px #1e90ff, 0 0 10px #1e90ff, 0 0 15px #1e90ff; /* Glowing effect */
+}
+
+.project:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 35px rgba(0, 204, 255, 0.7);
+}
+
+/* Contact Section */
+#contact {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #1a1a1a, #1e90ff);
+    text-align: center;
+    animation: fadeIn 2s ease-out;
+}
+
+#contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #1e90ff; /* Bright blue color for the heading */
+    text-shadow: 0 0 10px rgba(30, 144, 255, 0.5); /* Glowing effect */
+}
+
+#contact p {
+    color: #ffffff; /* Light gray for text */
+    margin-bottom: 30px; /* Space below the paragraph */
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.contact-buttons a {
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: #1e90ff;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 15px #1e90ff;
+}
+
+.contact-buttons a:hover {
+    box-shadow: 0 0 25px #1e90ff;
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #121212;
+    color: white;
+}
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #1e1e1e;
+}
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
